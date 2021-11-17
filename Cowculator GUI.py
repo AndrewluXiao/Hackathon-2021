@@ -50,11 +50,14 @@ def third_page():
     acre_answer = Entry(page3, width=10)
     acre_answer.place(relx=.5,rely=.2,anchor = CENTER)
 
-    
+    def acres_clicked():
+    #res = "You have " + acre_answer.get() + "acres."
+    #lbl.configure(text = res)
+        acre = acre_answer.get()
+
         
     acre_btn = Button(page3, text = "acres" ,fg = "red", command=acres_clicked)
     acre_btn.place(relx=0.5,rely=0.3, anchor = CENTER)
-
 
     
 
@@ -84,27 +87,54 @@ def third_page():
     
     animal_num = Entry(page3, width=10)
     animal_num.place(relx=.5,rely=.8,anchor = CENTER)
-    
 
-    animal_num_btn = Button(page3, text = "animal number" , fg = "red", command=animal_num_clicked)
-    animal_num_btn.place(relx=0.5,rely=0.9, anchor = CENTER)
-    
-
-def acres_clicked():
-    #res = "You have " + acre_answer.get() + "acres."
-    #lbl.configure(text = res)
-    acre = acre_answer.get()
-
-def animal_num_clicked():
+    def animal_num_clicked():
     #res = "You have " + animal_num.get() +animal_answer.get()
     #lbl.configure(text = res)
-    animal_num = animal_num.get()  
+        animal_number = animal_num.get()  
 
+
+    animal_num_btn = Button(page3, text = "animal number" , fg = "red", command=animal_num_clicked)
+    animal_num_btn.place(relx=0.5,rely=0.85, anchor = CENTER)
     
+
+    final_results = Button(page3, text = "Your Results" ,
+                 fg = "green", command = lambda:[page3.destroy(), fourth_page()])
+    final_results.place(relx=0.5,rely=.95 , anchor = CENTER)
+
+
+def fourth_page():
+    page4 = Tk()
+    page4.title("Your farm's carbon footprint")
+    page4.geometry('500x500')
+
+
+    score = Label(page4, text = "Calculated Carbon Footprint:")
+    score.place(relx=.5,rely=.1,anchor = CENTER)
+    
+    #Score (compared to our farm data)
+    CO2 = Label(page4, text = "CO2:")
+    CO2.place(relx=.5,rely=.2,anchor = CENTER)
+
+    NO2 = Label(page4, text = "NO2:")
+    NO2.place(relx=.5,rely=.3,anchor = CENTER)
+
+    CH4 = Label(page4, text = "CH4:")
+    CH4.place(relx=.5,rely=.4,anchor = CENTER)
+    
+
+
+    #Blurb about how to improve based on which category is the worst
+
+
+    #Redo button
+
+
+
 def main():
     acre = 0
     animal_type = ''
-    animal_num = 0
+    animal_number = 0
   
 
     answer = 0
