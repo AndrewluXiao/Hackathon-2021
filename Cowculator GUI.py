@@ -110,23 +110,24 @@ def fourth_page():
 
 
     score = Label(page4, text = "Calculated Carbon Footprint:")
-    score.place(relx=.5,rely=.1,anchor = CENTER)
+    score.grid(row=2, column=10)
     
     #Score (compared to our farm data)
     CO2 = Label(page4, text = "CO2:")
-    CO2.place(relx=.5,rely=.2,anchor = CENTER)
+    CO2.grid(row=4, column=10)
 
     NO2 = Label(page4, text = "NO2:")
-    NO2.place(relx=.5,rely=.3,anchor = CENTER)
+    NO2.grid(row=6, column=10)
 
     CH4 = Label(page4, text = "CH4:")
-    CH4.place(relx=.5,rely=.4,anchor = CENTER)
-    
+    CH4.grid(row=8, column=10)
 
 
     #Blurb about how to improve based on which category is the worst
+    rec = Label (page4, text = 'Based on your calculated footprint, we recommend... ')
+    rec.grid(row=10, column=10)
 
-
+    
     #Redo button
 
 
